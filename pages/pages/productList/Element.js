@@ -21,12 +21,7 @@ export default class Element extends Component{
     }
     return (
       <div style={styles.Element} className='element'>
-        {name==='NameTest000'?
         <input type='checkbox' style={styles.checkbox} className='delete-checkbox' id={SKU}/>
-        :
-        null
-        
-        }
         <div>{SKU}</div>
         <div>{name}</div>
         <div>{price} $</div>
