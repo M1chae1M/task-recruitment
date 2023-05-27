@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Input from "@/pages/pages/Input";
-import Form from "../Form";
 
-class BookComponentChild extends Component{
+export default class BookComponentChild extends Component{
   componentDidMount(){
     this.props.returnV('Weight: 0KG')
   }
@@ -18,5 +17,3 @@ class BookComponentChild extends Component{
     )
   }
 }
-
-export default BookComponentChild

@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Input from "@/pages/pages/Input";
-import Form from "../Form";
 
-class DVDcomponentChild extends Component{
+export default class DVDcomponentChild extends Component{
   componentDidMount(){
     this.props.returnV('Size: 0MB')
   }
@@ -18,7 +17,3 @@ class DVDcomponentChild extends Component{
     )
   }
 }
-// const WithF=<Form txt='#DVD' detail='Please provide size in MB'><DCC/></Form>;
-
-export default DVDcomponentChild
-// export default WithF

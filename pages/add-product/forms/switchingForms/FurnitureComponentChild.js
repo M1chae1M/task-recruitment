@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import Input from '@/pages/pages/Input';
-import Form from "../Form";
 
 const dimensions=['Height','Width','Length']
 
-class FurnitureComponentChild extends Component{
+export default class FurnitureComponentChild extends Component{
   componentDidMount(){
     this.props.returnV('Dimensions: 0x0x0')
   }
@@ -29,6 +28,3 @@ class FurnitureComponentChild extends Component{
     )
   }
 }
-
-// export default <Form txt='#Furniture' detail='Please provide dimensions in HxWxL format'><FurnitureComponentChild/></Form>;
-export default FurnitureComponentChild

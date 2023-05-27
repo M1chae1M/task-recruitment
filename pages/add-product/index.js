@@ -92,23 +92,17 @@ class AddProduct extends Component{
       this.setState({specValue:newState})
     }
     const changeSKU=(e)=>{
-      // const {value}=e?.target??'';
-      // const {productType}=this.state;
-      // const val_slc=value?.slice(0,2);
-      // const type_sku=types[productType].sku;
-
-      // if(val_slc!==type_sku) this.setState({sku_input:type_sku})
-      // else this.setState({sku_input:value})
-
-
       const {value}=e?.target??'';
-      // const {productType}=this.state;
-      // const val_slc=value?.slice(0,2);
-      // const type_sku=types[productType].sku;
+      const {productType}=this.state;
+      const val_slc=value?.slice(0,2);
+      const type_sku=types[productType].sku;
 
-      // if(val_slc!==type_sku) this.setState({sku_input:type_sku})
-      // else this.setState({sku_input:value})
-      this.setState({sku_input:value})
+      if(val_slc!==type_sku) this.setState({sku_input:type_sku})
+      else this.setState({sku_input:value})
+
+
+      // const {value}=e?.target??'';
+      // this.setState({sku_input:value})
     }
     return(
       <Store.Provider value={{myRef,returnV}}>
