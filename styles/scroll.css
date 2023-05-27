@@ -1,0 +1,10 @@
+::-webkit-scrollbar{
+width:5px;
+background-color:red;
+background-color:white;
+background-color:rgb(207, 207, 207);
+}
+::-webkit-scrollbar-thumb{
+background-color:white;
+background-color:grey;
+}
