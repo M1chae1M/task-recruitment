@@ -27,6 +27,7 @@ class App extends Component{
         fetch(`${process.env.NEXT_PUBLIC_API_URL}products/DELETE/`, {
           // method DELETE didn't work on 000webhost
           // method:'DELETE',
+          cache: 'force-cache',
           method:'POST',
           body:JSON.stringify({checkboxes})
         })
