@@ -13,7 +13,7 @@ class DVDcomponentChild extends Component{
     return(
       <div ref={this.props.myRef} id="DVD">
         {'Size (MB) '}
-        <Input id='DVD' type='number' placeholder="#size" onChange={onChange} defaultValue={0}/>
+        <Input id='size' type='number' placeholder="#size" onChange={onChange} defaultValue={0}/>
       </div>
     )
   }

@@ -17,7 +17,8 @@ class FurnitureComponentChild extends Component{
       <div ref={this.props.myRef} id='Furniture'>
       {
         dimensions?.map(x=>{
-          const tag=`#${x.toLowerCase()}`
+          // const tag=`#${x.toLowerCase()}`
+          const tag=`${x.toLowerCase()}`
           return <div key={x} style={{margin:'13px 0px',}}>
             {`${x} (CM) `}
             <Input className='Furniture' type='number' placeholder={tag} onChange={onChange} defaultValue={0} id={tag}/>

@@ -13,7 +13,7 @@ class BookComponentChild extends Component{
     return(
       <div ref={this.props.myRef} id="Book">
         {'Weight (KG) '}
-        <Input id='Book' type='number' placeholder="#weight" onChange={onChange} defaultValue={0}/>
+        <Input id='weight' type='number' placeholder="#weight" onChange={onChange} defaultValue={0}/>
       </div>
     )
   }
