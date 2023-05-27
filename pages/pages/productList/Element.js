@@ -20,7 +20,7 @@ export default class Element extends Component {
       }
     }
     return (
-      <div style={styles.Element}>
+      <div style={styles.Element} className='element'>
         <input type='checkbox' style={styles.checkbox} className='delete-checkbox' id={SKU}/>
         <div>{SKU}</div>
         <div>{name}</div>
