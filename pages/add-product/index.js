@@ -113,6 +113,7 @@ class AddProduct extends Component{
           <TypeSwitcher productType={productType} changeSwitch={changeSwitch} keys={keys}/>
           {SelectedForm}
         </form>
+        <div style={{position:'absolute',display:'none'}}>NameTest000</div>
       </Store.Provider>
     )
   }
