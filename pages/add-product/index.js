@@ -11,7 +11,6 @@ import Link from 'next/link';
 import MainHOC from '../MainHOC';
 
 export const Store=React.createContext();
-
 const myRef=React.createRef();
 
 const allRefs={
@@ -33,7 +32,6 @@ class AddProduct extends Component{
 
     this.setState({sku_input:types[this.state.productType].sku})
   }
-
   renderForms(){
     const DVDform=<Form txt='#DVD' detail='Please provide size in MB'><DCC/></Form>;
     const BookForm=<Form txt='#Book' detail='Please provide weight in KG'><BCC/></Form>;
@@ -54,7 +52,6 @@ class AddProduct extends Component{
       },
     }
   }
-
   render(){
     const {productType,specValue,msg,sku_input}=this.state;
     const types=this.renderForms()
