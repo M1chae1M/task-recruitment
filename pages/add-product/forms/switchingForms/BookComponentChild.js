@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Input from "@/pages/pages/Input";
+import Input from "@/pages/Input";
 
 export default class BookComponentChild extends Component{
   componentDidMount(){

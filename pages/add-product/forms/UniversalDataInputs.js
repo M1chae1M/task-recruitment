@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Input from '../../pages/Input';
+import Input from '../../Input';
 
 export default class UniversalDataInputs extends Component{
   render(){

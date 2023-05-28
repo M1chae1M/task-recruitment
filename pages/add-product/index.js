@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Button from '../pages/header/Button';
-import Header from '../pages/header/Header';
+import Button from '../header/Button';
+import Header from '../header/Header';
 import UniversalDataInputs from './forms/UniversalDataInputs';
 import TypeSwitcher from './TypeSwitcher';
 import FCC from './forms/switchingForms/FurnitureComponentChild';

@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import Button from './pages/header/Button';
-import Footer from './pages/Footer';
-import Header from './pages/header/Header';
-import ProductList from './pages/productList/ProductList';
+import Button from './header/Button';
+import Footer from './Footer';
+import Header from './header/Header';
+import ProductList from './productList/ProductList';
 import Link from 'next/link';
 import MainHOC from './MainHOC';
 
@@ -67,5 +67,4 @@ function withoutDeleted(products,checkboxes){
     })
 }
 
-// export default (App)
 export default MainHOC(App)

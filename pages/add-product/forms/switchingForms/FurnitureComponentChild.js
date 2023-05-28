@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Input from '@/pages/pages/Input';
+import Input from '@/pages/Input';
 
 const dimensions=['Height','Width','Length']
 
