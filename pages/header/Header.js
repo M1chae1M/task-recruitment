@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
-export default class Header extends Component {
-  render() {
+export default class Header extends Component{
+  render(){
     const {txt,children}=this.props;
     const styles={
       Header:{
@@ -16,13 +16,13 @@ export default class Header extends Component {
         fontSize:'1.2rem',
       },
     }
-    return (
+    return(
       <div style={styles.Header}>
         <div>{txt}</div>
         <div>
           {children}
         </div>
       </div>
-    );
+    )
   }
 }

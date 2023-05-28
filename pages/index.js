@@ -12,7 +12,9 @@ class App extends Component{
     msg:'',
   }
   componentDidMount(){
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}products/`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}products/`,{
+      cache:'force-cache'
+    })
     .then(res=>res.json())
     .then(res=>this.setState({products:res}))
     .catch(err=>this.setState({msg:'Unable to connect to the database. We apologize!'}))
@@ -27,7 +29,7 @@ class App extends Component{
         fetch(`${process.env.NEXT_PUBLIC_API_URL}products/DELETE/`, {
           // method DELETE didn't work on 000webhost
           // method:'DELETE',
-          cache: 'force-cache',
+          cache:'force-cache',
           method:'POST',
           body:JSON.stringify({checkboxes})
         })

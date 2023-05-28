@@ -18,7 +18,7 @@ export default class Form extends Component{
       <Store.Consumer>
       {value=>{
         const {myRef,returnV}=value??{};
-        const ChildrenWithProps=React.Children?.map(children, (child) => {
+        const ChildrenWithProps=React.Children?.map(children, (child)=>{
           return React.cloneElement(child,{
             myRef:myRef,
             returnV:returnV
