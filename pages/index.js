@@ -13,7 +13,7 @@ class App extends Component{
   }
   componentDidMount(){
     fetch(`${process.env.NEXT_PUBLIC_API_URL}products/`,{
-      cache:'force-cache'
+      // cache:'force-cache'
     })
     .then(res=>res.json())
     .then(res=>this.setState({products:res}))
@@ -29,7 +29,7 @@ class App extends Component{
         fetch(`${process.env.NEXT_PUBLIC_API_URL}products/DELETE/`, {
           // method DELETE didn't work on 000webhost
           // method:'DELETE',
-          cache:'force-cache',
+          // cache:'force-cache',
           method:'POST',
           body:JSON.stringify({checkboxes})
         })
