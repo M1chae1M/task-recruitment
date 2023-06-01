@@ -69,7 +69,7 @@ class AddProduct extends Component{
       const name=allRefs?.name?.current?.value||'';
       const price=Number(allRefs?.price?.current?.value||0)?.toFixed(2);
 
-      const data={SKU,name,price,specValue}
+      const data={SKU,name,price,specValue,productType}
       if(SKU!=='' && name!=='' && price>0){
         fetch(`${process.env.NEXT_PUBLIC_API_URL}products/ADD/`, {
           method:'POST',
@@ -79,8 +79,12 @@ class AddProduct extends Component{
         .then(res=>{
           if(res?.msg==='') window.location="/"
           else this.setState({msg:res.msg})
+
+
+          console.log(res)
         })
-        .catch(err=>console.log('There was an issue while trying to add a new product. Please try again later.'))
+        // .catch(err=>console.log('There was an issue while trying to add a new product. Please try again later.'))
+        .catch(err=>console.log(err))
       }
       else{
         this.setState({msg:'Complete all fields!'})
