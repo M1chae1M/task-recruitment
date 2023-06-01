@@ -18,7 +18,7 @@ export default class UniversalDataInputs extends Component{
         color:'red',
         position:'absolute',
         right:'0%',
-        transform:'translateX(105%)',
+        transform:'translateX(115%)',
         height:'100%',
         display:'grid',
         alignItems:'center',
