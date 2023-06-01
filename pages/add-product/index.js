@@ -79,12 +79,8 @@ class AddProduct extends Component{
         .then(res=>{
           if(res?.msg==='') window.location="/"
           else this.setState({msg:res.msg})
-
-
-          console.log(res)
         })
-        // .catch(err=>console.log('There was an issue while trying to add a new product. Please try again later.'))
-        .catch(err=>console.log(err))
+        .catch(err=>console.log('There was an issue while trying to add a new product. Please try again later.'))
       }
       else{
         this.setState({msg:'Complete all fields!'})
