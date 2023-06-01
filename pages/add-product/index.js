@@ -26,12 +26,6 @@ class AddProduct extends Component{
     msg:'',
     sku_input:'',
   }
-  componentDidMount(){
-    const types=this.renderForms()
-    const keys=Object.keys(types)
-
-    this.setState({sku_input:types[this.state.productType].sku})
-  }
   renderForms(){
     const DVDform=<Form txt='#DVD' detail='Please provide size in MB'><DCC/></Form>;
     const BookForm=<Form txt='#Book' detail='Please provide weight in KG'><BCC/></Form>;
@@ -52,6 +46,12 @@ class AddProduct extends Component{
       },
     }
   }
+  componentDidMount(){
+    const types=this.renderForms()
+    const keys=Object.keys(types)
+
+    this.setState({sku_input:types[this.state.productType].sku})
+  }
   render(){
     const {productType,specValue,msg,sku_input}=this.state;
     const types=this.renderForms()
@@ -65,9 +65,10 @@ class AddProduct extends Component{
     }
     const onSubmit=(e)=>{
       e.preventDefault()
-      const SKU=allRefs?.skuRef?.current?.value||''
-      const name=allRefs?.name?.current?.value||''
-      const price=Number(allRefs?.price?.current?.value||0)?.toFixed(2)
+      const SKU=allRefs?.skuRef?.current?.value||'';
+      const name=allRefs?.name?.current?.value||'';
+      const price=Number(allRefs?.price?.current?.value||0)?.toFixed(2);
+
       const data={SKU,name,price,specValue}
       if(SKU!=='' && name!=='' && price>0){
         fetch(`${process.env.NEXT_PUBLIC_API_URL}products/ADD/`, {

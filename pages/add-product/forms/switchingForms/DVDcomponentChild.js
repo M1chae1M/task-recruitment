@@ -3,11 +3,11 @@ import Input from "@/pages/Input";
 
 export default class DVDcomponentChild extends Component{
   componentDidMount(){
-    this.props.returnV('Size:0MB')
+    this.props.returnV('Size: 0MB')
   }
   render(){
     const onChange=(e)=>{
-      this.props.returnV(`Size:${e.target.value}MB`)
+      this.props.returnV(`Size: ${e.target.value}MB`)
     }
     return(
       <div ref={this.props.myRef} id="DVD">
