@@ -33,16 +33,13 @@ class AddProduct extends Component{
     
     return{
       'DVD':{
-        form:DVDform,
-        sku:'DV',
+        form:DVDform, sku:'DV'
       },
       'Furniture':{
-        form:FurnitureForm,
-        sku:'FU',
+        form:FurnitureForm, sku:'FU'
       },
       'Book':{
-        form:BookForm,
-        sku:'BK',
+        form:BookForm, sku:'BK'
       },
     }
   }
@@ -58,32 +55,19 @@ class AddProduct extends Component{
     const keys=Object.keys(types)
 
     const SelectedForm=types[productType].form
-    const changeSwitch=(e)=>{
-      this.setState({productType:e.target.value},()=>{
-        changeSKU()
-      })
-    }
     const onSubmit=(e)=>{
-      e.preventDefault()
+      e.preventDefault();
       const SKU=allRefs?.skuRef?.current?.value||'';
       const name=allRefs?.name?.current?.value||'';
       const price=Number(allRefs?.price?.current?.value||0)?.toFixed(2);
 
-      // const data={SKU,name,price,specValue:JSON.stringify(specValue)}
-      // const data={SKU,name,price,specValue:JSON.stringify(specValue),productType}
-      // const data={SKU,name,price,specValue:(specValue),productType}
-      // const data={SKU,name,price,specValue:(specValue[0])}
-      // const data={SKU,name,price,specValue:JSON.stringify(specValue)}
       const data={SKU,name,price,specValue}
-      //--------
-      // console.log(specValue)
       if(SKU!=='' && name!=='' && price>0){
         fetch(`${process.env.NEXT_PUBLIC_API_URL}products/ADD/`, {
           method:'POST',
           body:JSON.stringify({data})
         })
         .then(res=>res.json())
-        // .then(res=>console.log(res))
         .then(res=>{
           if(res?.msg==='') window.location="/"
           else this.setState({msg:res.msg})
@@ -93,24 +77,6 @@ class AddProduct extends Component{
       else{
         this.setState({msg:'Complete all fields!'})
       }
-
-
-
-      // if(SKU!=='' && name!=='' && price>0){
-      //   fetch(`${process.env.NEXT_PUBLIC_API_URL}products/ADD/`, {
-      //     method:'POST',
-      //     body:JSON.stringify({data})
-      //   })
-      //   .then(res=>res.json())
-      //   .then(res=>{
-      //     if(res?.msg==='') window.location="/"
-      //     else this.setState({msg:res.msg})
-      //   })
-      //   .catch(err=>console.log('There was an issue while trying to add a new product. Please try again later.'))
-      // }
-      // else{
-      //   this.setState({msg:'Complete all fields!'})
-      // }
     }
     const returnV=(newState)=>{
       this.setState({specValue:newState})
@@ -124,9 +90,13 @@ class AddProduct extends Component{
       if(val_slc!==type_sku) this.setState({sku_input:type_sku})
       else this.setState({sku_input:value})
 
-
       // const {value}=e?.target??'';
       // this.setState({sku_input:value})
+    }
+    const changeSwitch=(e)=>{
+      this.setState({productType:e.target.value},()=>{
+        changeSKU()
+      })
     }
     return(
       <Store.Provider value={{myRef,returnV}}>
