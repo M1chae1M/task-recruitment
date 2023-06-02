@@ -3,11 +3,13 @@ import Input from "@/pages/Input";
 
 export default class BookComponentChild extends Component{
   componentDidMount(){
-    this.props.returnV('Weight: 0KG')
+    this.props.returnV(0)
+    // this.props.returnV('Weight: 0KG')
   }
   render(){
     const onChange=(e)=>{
-      this.props.returnV(`Weight: ${e.target.value}KG`)
+      this.props.returnV(e.target.value)
+      // this.props.returnV(`Weight: ${e.target.value}KG`)
     }
     return(
       <div ref={this.props.myRef} id="Book">

@@ -69,13 +69,21 @@ class AddProduct extends Component{
       const name=allRefs?.name?.current?.value||'';
       const price=Number(allRefs?.price?.current?.value||0)?.toFixed(2);
 
-      const data={SKU,name,price,specValue,productType}
+      // const data={SKU,name,price,specValue:JSON.stringify(specValue)}
+      // const data={SKU,name,price,specValue:JSON.stringify(specValue),productType}
+      // const data={SKU,name,price,specValue:(specValue),productType}
+      // const data={SKU,name,price,specValue:(specValue[0])}
+      // const data={SKU,name,price,specValue:JSON.stringify(specValue)}
+      const data={SKU,name,price,specValue}
+      //--------
+      // console.log(specValue)
       if(SKU!=='' && name!=='' && price>0){
         fetch(`${process.env.NEXT_PUBLIC_API_URL}products/ADD/`, {
           method:'POST',
           body:JSON.stringify({data})
         })
         .then(res=>res.json())
+        // .then(res=>console.log(res))
         .then(res=>{
           if(res?.msg==='') window.location="/"
           else this.setState({msg:res.msg})
@@ -85,6 +93,24 @@ class AddProduct extends Component{
       else{
         this.setState({msg:'Complete all fields!'})
       }
+
+
+
+      // if(SKU!=='' && name!=='' && price>0){
+      //   fetch(`${process.env.NEXT_PUBLIC_API_URL}products/ADD/`, {
+      //     method:'POST',
+      //     body:JSON.stringify({data})
+      //   })
+      //   .then(res=>res.json())
+      //   .then(res=>{
+      //     if(res?.msg==='') window.location="/"
+      //     else this.setState({msg:res.msg})
+      //   })
+      //   .catch(err=>console.log('There was an issue while trying to add a new product. Please try again later.'))
+      // }
+      // else{
+      //   this.setState({msg:'Complete all fields!'})
+      // }
     }
     const returnV=(newState)=>{
       this.setState({specValue:newState})
